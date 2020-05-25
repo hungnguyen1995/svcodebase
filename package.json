@@ -1,6 +1,6 @@
 {
   "name": "svcodebase",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "codebase",
   "main": "build/index.js",
   "module": "build/index.es.js",
@@ -38,9 +38,9 @@
     "typescript": "^3.9.3"
   },
   "peerDependencies": {
+    "js-cookie": "^2",
     "react": "^16",
     "react-dom": "^16",
-    "js-cookie": "^2",
     "react-redux": "^7"
   }
 }
