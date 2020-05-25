@@ -2,11 +2,11 @@
   "name": "svcodebase",
   "version": "1.0.5",
   "description": "codebase",
-  "main": "build/index.js",
-  "module": "build/index.es.js",
-  "jsnext:main": "build/index.es.js",
+  "main": "index.js",
+  "module": "index.es.js",
+  "jsnext:main": "index.es.js",
   "files": [
-    "build"
+    "index.js"
   ],
   "scripts": {
     "build": "rollup -c",
