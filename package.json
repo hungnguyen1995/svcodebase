@@ -1,6 +1,6 @@
 {
   "name": "svcodebase",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "codebase",
   "main": "index.js",
   "module": "index.es.js",
