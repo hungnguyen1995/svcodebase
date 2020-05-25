@@ -1,0 +1,46 @@
+{
+  "name": "svcodebase",
+  "version": "1.0.0",
+  "description": "codebase",
+  "main": "build/index.js",
+  "module": "build/index.es.js",
+  "jsnext:main": "build/index.es.js",
+  "files": [
+    "build"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "test": "echo \"Ổn rồi đừng test nửa\" "
+  },
+  "repository": {
+    "type": "git",
+    "url": "D:/source/SieuViet/sieuvietcodebase/.git/"
+  },
+  "keywords": [
+    "sieuviet",
+    "codebase"
+  ],
+  "author": "hungng",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/react": "^16.9.35",
+    "@types/react-dom": "^16.9.8",
+    "@types/react-test-renderer": "^16.9.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts-ts": "^3.1.0",
+    "react-test-renderer": "^16.13.1",
+    "rollup": "^2.10.9",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-peer-deps-external": "^2.2.2",
+    "rollup-plugin-typescript2": "^0.27.1",
+    "typescript": "^3.9.3"
+  },
+  "peerDependencies": {
+    "react": "^16",
+    "react-dom": "^16",
+    "js-cookie": "^2",
+    "react-redux": "^7"
+  }
+}

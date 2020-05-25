@@ -1,0 +1,10 @@
+export declare const useDispatchAction: () => any;
+export declare const dispatchServer: (ctx: any) => any;
+export declare const useCommon: (keys: string[]) => any[];
+export declare const useUserInfo: () => any;
+export declare const useUserNotice: () => any;
+export declare const useUserFavourite: () => any;
+export declare const useToggle: () => any;
+export declare const useLocation: () => any;
+export declare const useApi: (key: string) => any;
+export declare const useApiResponse: (key: string) => any;
