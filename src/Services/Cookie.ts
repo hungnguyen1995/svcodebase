@@ -6,12 +6,12 @@ interface Process {
 }
 declare var process: Process;
 
-export const FeCookie = {
+export const SvCookie = {
     isBrowser(): any {
         return process.browser;
     },
     setCookie(key: string, value: string, date: number = 1) {
-        if (FeCookie.isBrowser()) {
+        if (SvCookie.isBrowser()) {
             cookie.set(key, value, {
                 expires: date,
                 path: "/"
@@ -19,7 +19,7 @@ export const FeCookie = {
         }
     },
     removeCookie(key: string) {
-        if (FeCookie.isBrowser()) {
+        if (SvCookie.isBrowser()) {
             cookie.remove(key, {
                 expires: 1
             });
@@ -41,8 +41,8 @@ export const FeCookie = {
         return rawCookie.split("=")[1];
     },
     getCookie(key: string, req?: any) {
-        return FeCookie.isBrowser()
-            ? FeCookie.getCookieFromBrowser(key)
-            : FeCookie.getCookieFromServer(key, req);
+        return SvCookie.isBrowser()
+            ? SvCookie.getCookieFromBrowser(key)
+            : SvCookie.getCookieFromServer(key, req);
     },
 };

@@ -7,13 +7,13 @@
 yarn add svcodebase
 ```
 ### Using 
-import { FeCookie } from "svcodebase";
+import { SvCookie } from "svcodebase";
 
 ##### function
 ```
-export { FeCookie } from "./Services/Cookie";
-export { FeAuth } from "./Services/Auth";
-export { FeCheck } from "./Services/Check";
+export { SvCookie } from "./Services/Cookie";
+export { SvAuth } from "./Services/Auth";
+export { SvCheck } from "./Services/Check";
 export { useOnClickOutside } from "./Hooks/useOutSide";
 export { useHover } from "./Hooks/useHover";
 export { useScrollToTop } from "./Hooks/useScrollToTop";

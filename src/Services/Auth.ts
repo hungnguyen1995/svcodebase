@@ -1,4 +1,4 @@
-import { FeCookie } from "./Cookie";
+import { SvCookie } from "./Cookie";
 
 const TokenExpired = 100; // 100 day
 
@@ -7,20 +7,20 @@ interface Process {
 }
 declare var process: Process;
 
-export const FeAuth = {
+export const SvAuth = {
     isBrowser(): any {
         return process.browser;
     },
     logout() {
-        if (!FeAuth.isBrowser()) return;
-        FeCookie.removeCookie("access_token");
-        FeCookie.removeCookie("user_info");
+        if (!SvAuth.isBrowser()) return;
+        SvCookie.removeCookie("access_token");
+        SvCookie.removeCookie("user_info");
     },
     setAccessToken(accessToken: string) {
-        FeCookie.setCookie("access_token", accessToken, TokenExpired);
+        SvCookie.setCookie("access_token", accessToken, TokenExpired);
     },
     getAccessToken(req?: any) {
-        const accessToken = FeCookie.getCookie("access_token", req);
+        const accessToken = SvCookie.getCookie("access_token", req);
         if (accessToken && accessToken !== "undefined") {
             return accessToken;
         }
@@ -28,20 +28,20 @@ export const FeAuth = {
     },
     setUserInfo(userFull: any) {
         const user = userFull;
-        if (!FeAuth.isBrowser()) return;
+        if (!SvAuth.isBrowser()) return;
         if (user) {
             if (user.token_auth) {
-                FeAuth.setAccessToken(user.token_auth);
+                SvAuth.setAccessToken(user.token_auth);
                 delete user.token_auth;
             }
             delete user.token_auth;
             const userString = JSON.stringify(user);
             const userInfoEncode = Buffer.from(userString).toString("base64");
-            FeCookie.setCookie("user_info", userInfoEncode, TokenExpired);
+            SvCookie.setCookie("user_info", userInfoEncode, TokenExpired);
         }
     },
     getUserInfo(req?: any) {
-        const user = FeCookie.getCookie("user_info", req);
+        const user = SvCookie.getCookie("user_info", req);
         if (user) {
             const userInfoDecode = JSON.parse(
                 Buffer.from(user, "base64").toString()
@@ -52,15 +52,15 @@ export const FeAuth = {
         return null;
     },
     isLogged(req?: any) {
-        const userBase = FeAuth.getAccessToken(req);
+        const userBase = SvAuth.getAccessToken(req);
         return !!userBase;
     },
     isEmployer(req?: any) {
-        const userBase = FeAuth.getUserInfo(req);
+        const userBase = SvAuth.getUserInfo(req);
         return !!(userBase && userBase.role === "employer");
     },
     isSeeker(req?: any) {
-        const userBase = FeAuth.getUserInfo(req);
+        const userBase = SvAuth.getUserInfo(req);
         return !!(userBase && userBase.role === "seeker");
     }
 };
